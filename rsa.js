@@ -105,6 +105,13 @@ const RSAPrivateKey = class RSAPrivateKey {
 
         return de;
     }
+
+    //hex string
+    generateProof(params) {
+        const hash = crypto.createHash('sha256').update(params).digest('hex');
+        const proof = this.sign(hash);
+        return proof;
+    }
 }
 
 const RSAPublicKey = class RSAPublicKey {
@@ -133,6 +140,13 @@ const RSAPublicKey = class RSAPublicKey {
         const de = deNum.toString(16);
 
         return de;
+    }
+
+    checkProof(params, proof) {
+        const hash = crypto.createHash('sha256').update(params).digest('hex');
+        const verify = this.verify(proof)
+
+        return (hash == verify);
     }
 }
 
