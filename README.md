@@ -3,7 +3,7 @@ Module to implement RSA protocol.
 
 
 ```
-npm i --save rsa-cts2
+npm i rsa-cts-js
 ```
 
 
