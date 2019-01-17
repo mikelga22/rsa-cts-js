@@ -1,12 +1,6 @@
 Module to implement RSA protocol.
 
 
-
-```
-npm i rsa-cts-js
-```
-
-
 ```
 const rsa = require('rsa-cts2');
 ```
